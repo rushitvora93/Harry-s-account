@@ -1,7 +1,7 @@
 app.service('getData',["$http","$location",function($http,$location) {
 
     this.getAccountData = function (callback) {
-        $http.get($location.protocol() + '://'+ $location.host() +':'+  $location.port()+"/Xebia/data/data.json").then(callback);
+        $http.get("./data/data.json").then(callback);
     }
 	
 	this.polish = function(data) {
