@@ -1,89 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="ANSI">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Harry's account">
-      <meta name="author" content="Rushit">
-      <title>Harry's Account</title>
-      <!-- CSS -->
-      <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	  <link href="./css/style.css" rel="stylesheet">
-	  
-      <!-- Script -->
-      <script src="./node_modules/jquery/dist/jquery.js"></script>
-      <script src="./node_modules/angular/angular.min.js"></script>
-	    <script src="./node_modules/angular-translate/dist/angular-translate.min.js"></script>
-      <script src="js/app.js"></script>
-	  <script src="js/translate.js"></script>
-      <script src="js/service.js"></script>
-      <script src="js/filter.js"></script>
-      <script src="js/controller.js"></script>
-   </head>
-   <body ng-app = "accountApp" ng-controller="accountController" ng-cloak>
-      <div class="container-fluid" >
-         <div class="row clearfix profile_banner  ">
+
+<head>
+    <meta charset="ANSI">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Harry's account">
+    <meta name="author" content="Rushit">
+    <title>Harry's Account</title>
+	
+    <!-- CSS -->
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
+    <!-- Script -->
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="./node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body ng-app="accountApp" ng-controller="accountController" ng-cloak>
+    <div class="container-fluid">
+        <div class="row clearfix profile_banner  ">
             <div class="col-sm-3">
-               <div class="profile_pic">
-                  <i class="fa fa-user profile_size" aria-hidden="true"></i>   
-               </div>
-               <div class="profile_body">
-                  <div><b>{{data.profile.salutation}} {{data.profile.name}}</b></div>
-                  <div>{{'CAT' | translate}} <span class="">{{data.profile.category}}</span></div>
-                  <div>{{'LOCATION' | translate}} {{data.profile.location}}</div>
-               </div>
+                <div class="profile_pic">
+                    <i class="fa fa-user profile_size" aria-hidden="true"></i>
+                </div>
+                <div class="profile_body">
+                    <div><b>{{data.profile.salutation}} {{data.profile.name}}</b></div>
+                    <div>{{'CAT' | translate}} <span class="">{{data.profile.category}}</span></div>
+                    <div>{{'LOCATION' | translate}} {{data.profile.location}}</div>
+                </div>
             </div>
-         </div>
-         <div class="row">
-         </div>
-      </div>
-      <div class="container account_body">
-         <div class="row searchpanel">
+        </div>
+        <div class="row">
+        </div>
+    </div>
+    <div class="container account_body">
+        <div class="row searchpanel">
             <div class="col-sm-3">
-               <div>
-                  <label>{{'TYPE' | translate}}</label>
-                  <input class="form-control" id="Name" type="text" ng-model="accType">
-               </div>
-            </div>
-            <div class="col-sm-3">
-               <div class="form-group">
-                  <label class="control-label">{{'SORT' | translate}}</label>
-                  <div class="">
-                     <label class="radio-inline" > <input type="radio" name="sortOrder" ng-value = "false" ng-model = "sortDirection" ng-change = "currentSort = 'name'"/>{{'ASC' | translate}}</label>
-                     <label class="radio-inline" > <input type="radio" name="sortOrder" ng-value = "true" ng-model = "sortDirection" ng-change = "currentSort = 'name'"/>{{'DSC' | translate}}</label>
-                  </div>
-               </div>
+                <div>
+                    <label>{{'TYPE' | translate}}</label>
+                    <input class="form-control" id="Name" type="text" ng-model="accType">
+                </div>
             </div>
             <div class="col-sm-3">
-               <button type = "button" class="btn btn-primary" ng-click="reset()">{{'RESET' | translate}}</button>
+                <div class="form-group">
+                    <label class="control-label">{{'SORT' | translate}}</label>
+                    <div class="">
+                        <label class="radio-inline"> <input type="radio" name="sortOrder" ng-value = "false" ng-model = "sortDirection" ng-change = "currentSort = 'name'"/>{{'ASC' | translate}}</label>
+                        <label class="radio-inline"> <input type="radio" name="sortOrder" ng-value = "true" ng-model = "sortDirection" ng-change = "currentSort = 'name'"/>{{'DSC' | translate}}</label>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="container">
-         <div ng-repeat = "account in accountsData | accTypeFilter:accType" >
-            <h3 data-toggle="collapse" class="header" data-target="#demo{{$parent.$index}}" ng-repeat = "(key, value) in account">{{key | uppercase}}</h3>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" ng-click="reset()">{{'RESET' | translate}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div ng-repeat="account in accountsData | accTypeFilter:accType">
+            <h3 data-toggle="collapse" class="header" data-target="#demo{{$parent.$index}}" ng-repeat="(key, value) in account">{{key | uppercase}}</h3>
             <div class="details table-responsive collapse in" id="demo{{$index}}" ng-if="accVal[$index].length > 0">
-               <table class="table">
-                  <thead>
-                     <th ng-repeat = "heading in accHeadings[$index]">{{heading | uppercase}}</th>
-                  </thead>
-                  <tbody>
-                     <tr ng-repeat = "accDetail in accVal[$index] | orderBy : currentSort : sortDirection">
-                        <td ng-repeat = "(key, value) in accDetail">{{value}}</td>
-                        <td ng-repeat = "i in getNumber(accDetail,accHeadings[$parent.$index])">--</td>
-                     </tr>
-                  </tbody>
-               </table>
+                <table class="table">
+                    <thead>
+                        <th ng-repeat="heading in accHeadings[$index]">{{heading | uppercase}}</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="accDetail in accVal[$index] | orderBy : currentSort : sortDirection">
+                            <td ng-repeat="(key, value) in accDetail">{{value}}</td>
+                            <td ng-repeat="i in getNumber(accDetail,accHeadings[$parent.$index])">--</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="details collapse in" id="demo{{$index}}" ng-if="accVal[$index].length == 0">{{'DATA_NA' | translate}}</div>
-         </div>
-      </div>
-      <!-- /.container -->
-      <!-- Bootstrap core JavaScript
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript
          ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-   </body>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
 </html>
