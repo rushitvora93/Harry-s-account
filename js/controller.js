@@ -1,4 +1,4 @@
-app.controller("accountController",["$scope","getData", function($scope,getData) {
+app.controller("accountController",["$scope","$translate","getData", function($scope,$translate,getData) {
 
 $scope.accHeadings = [];
 $scope.accountsData = [];
@@ -20,6 +20,8 @@ $scope.reset = function() {
 
 getData.getAccountData(function(response) {
 	$scope.data = response.data;
+	$translate.use($scope.data.profile.lang);
+	
 	var polishedData = getData.polish($scope.data);
 	$scope.accHeadings = polishedData.accHeadings;
 	$scope.accountsData = polishedData.accountsData;

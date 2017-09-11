@@ -1,1 +1,3 @@
-var app = angular.module("accountApp",[]);
+var app = angular.module("accountApp",['pascalprecht.translate']);
+
+
