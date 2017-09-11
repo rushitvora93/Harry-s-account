@@ -2,9 +2,13 @@
 
 This application will display all accounts of Harry.
 
-##Usage
-
-
+## Usage
+1. We can filter accounts based on account categories. For Eg: We get only current account when we type 'curr' in highlighted text box 
+![cmdImg](img/func_1.PNG?raw=true)
+2. We can sort each account in ascending/descending order based on account names. 
+![cmdImg](img/func_2.PNG?raw=true)
+3. We can also collapse/expand a particular category accounts based on our need
+![cmdImg](img/func_3.PNG?raw=true)
 
 ## Getting Started
 
@@ -22,11 +26,11 @@ A step by step process to get a development env running
 
 1. Download the project zip file from repository and extract the same.
 2. Go to project folder and type npm install.This will install all the dependencies.
-![cmdImg](img/install_1.png?raw=true)
+![cmdImg](img/install_1.PNG?raw=true)
 3. Deploy the folder on any local server. I am using XAMP server here.
-![cmdImg](img/install_2.png?raw=true)
+![cmdImg](img/install_2.PNG?raw=true)
 4. Start the server and open index.html on your server
-![cmdImg](img/install_3.png?raw=true)
+![cmdImg](img/install_3.PNG?raw=true)
 
 ### Running the tests
 
