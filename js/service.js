@@ -1,11 +1,11 @@
 app.service('getData', ["$http", "$location", function($http, $location) {
-	
-	//get account data from REST service
+
+    //get account data from REST service
     this.getAccountData = function(callback) {
         $http.get("./data/data.json").then(callback);
     }
 
-	//Format data
+    //Format data
     this.polish = function(data) {
         var dataCombined = {
             accountsData: [],

@@ -1,6 +1,6 @@
 app.config(function($translateProvider) {
 
-	//English
+    //English
     $translateProvider.translations('en-US', {
         'CAT': 'Category:',
         'LOCATION': 'Location:',
@@ -12,7 +12,7 @@ app.config(function($translateProvider) {
         'RESET': 'Reset'
     });
 
-	//Spanish
+    //Spanish
     $translateProvider.translations('es-ES', {
         'CAT': 'Categoría:',
         'LOCATION': 'Ubicación:',
