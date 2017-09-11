@@ -4,7 +4,6 @@ module.exports = function(config) {
         basePath: './',
         files: [
             'node_modules/angular/angular.min.js',
-			'node_modules/angular-translate/dist/angular-translate.min.js',
             'node_modules/angular-mocks/angular-mocks.js',
             'js/**/*.js',
             'test/unit/*.js'
