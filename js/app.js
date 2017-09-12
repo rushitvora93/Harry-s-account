@@ -1,3 +1,3 @@
-var app = angular.module("accountApp",['pascalprecht.translate']);
+var app = angular.module("accountApp",['pascalprecht.translate','ngAnimate']);
 
 

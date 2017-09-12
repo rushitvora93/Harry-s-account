@@ -18,6 +18,7 @@
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/angular-translate/dist/angular-translate.min.js"></script>
+	<script src="./node_modules/angular-animate/angular-animate.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/translate.js"></script>
     <script src="js/service.js"></script>
@@ -65,7 +66,7 @@
         </div>
     </div>
     <div class="container">
-        <div ng-repeat="account in accountsData | accTypeFilter:accType">
+        <div ng-repeat="account in accountsData | accTypeFilter:accType" class="animate-repeat">
             <h3 data-toggle="collapse" class="header" data-target="#demo{{$parent.$index}}" ng-repeat="(key, value) in account">{{key | uppercase}}</h3>
             <div class="details table-responsive collapse in" id="demo{{$index}}" ng-if="accVal[$index].length > 0">
                 <table class="table">
@@ -73,7 +74,7 @@
                         <th ng-repeat="heading in accHeadings[$index]">{{heading | uppercase}}</th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="accDetail in accVal[$index] | orderBy : currentSort : sortDirection">
+                        <tr ng-repeat="accDetail in accVal[$index] | orderBy : currentSort : sortDirection" class="animate-repeat">
                             <td ng-repeat="(key, value) in accDetail">{{value}}</td>
                             <td ng-repeat="i in getNumber(accDetail,accHeadings[$parent.$index])">--</td>
                         </tr>
