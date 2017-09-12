@@ -40,8 +40,7 @@ The unit tests are available with <b>npm test</b>
 * [Click here for demo](https://rushitvora93.github.io/)
 
 ## Preferred browsers
-Latest version of Chrome, Firefox
-IE edge
+Latest version of Chrome, Firefox and IE edge
 	
 ## Authors
 
